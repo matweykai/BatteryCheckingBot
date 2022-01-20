@@ -22,7 +22,7 @@ def main_loop():
 
 def get_settings() -> BotSettings:
     try:
-        with open("settings.json", "r") as settings_file:
+        with open("settings.json", "r", encoding="utf-8") as settings_file:
             # Deserialized settings object
             des_obj = json.load(fp=settings_file)
 
@@ -40,7 +40,7 @@ def get_settings() -> BotSettings:
     except OSError:
         bot_settings = BotSettings()
 
-        return bot_settings
+    return bot_settings
 
 
 main_loop()
