@@ -1,0 +1,7 @@
+{
+  "phrases": ["Battery charge is running out"],
+  "notification_name": "Battery notification",
+  "battery_limit": 99,
+  "pause_time": 5,
+  "showing_time": 3
+}
