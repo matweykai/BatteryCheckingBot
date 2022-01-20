@@ -7,6 +7,7 @@ from BotSettings import BotSettings
 
 
 def main_loop():
+    """It's an infinite loop where bot checks battery level from time to time"""
     notifier = ToastNotifier()
     while True:
         settings_obj = get_settings()
@@ -21,6 +22,11 @@ def main_loop():
 
 
 def get_settings() -> BotSettings:
+    """Loads settings from json object
+
+    Open json file with name 'settings.json', deserializes it and then
+    creates and feel BotSettings object
+    """
     try:
         with open("settings.json", "r", encoding="utf-8") as settings_file:
             # Deserialized settings object
@@ -43,4 +49,5 @@ def get_settings() -> BotSettings:
     return bot_settings
 
 
-main_loop()
+if __name__ == '__main__':
+    main_loop()
